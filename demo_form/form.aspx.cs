@@ -10,6 +10,7 @@ public partial class form : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+        rngbdt.MaximumValue = DateTime.Now.ToShortDateString();
     }
 
     protected void btnSubmit_Click(object sender, EventArgs e)
@@ -18,9 +19,11 @@ public partial class form : System.Web.UI.Page
         if (!Page.IsValid)
             return;
 
-        lblnm.Text = txtLastName.Text + " " + txtFirstName.Text;
-        
-        lblhb.Text = "";
+        lblnm.Text = "Name = " + txtLastName.Text + " " + txtFirstName.Text;
+
+        lblcrs.Text = "Course = " + crslst.Text;
+
+        lblhb.Text = "Hobbies = " + "";
 
         foreach (ListItem item in chkhb.Items)
         {
@@ -30,7 +33,7 @@ public partial class form : System.Web.UI.Page
             }
         }
 
-        lblfile.Text = FileUpload1.FileName;
+        lblfile.Text = "File Name = " + FileUpload1.FileName;
     }
 
 }

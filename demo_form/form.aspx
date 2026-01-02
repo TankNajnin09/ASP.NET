@@ -29,6 +29,27 @@
         </div>
 
         <div class="form-group">
+             <label>Birth Date:</label>
+             <asp:TextBox ID="txtbrdt" runat="server" CssClass="form-control"></asp:TextBox>
+             <asp:RequiredFieldValidator 
+                 ID="rfvbrdt" 
+                 runat="server" 
+                 ControlToValidate="txtbrdt"
+                 ErrorMessage="Required" 
+                 Display="Dynamic" 
+                 ForeColor="Red" />
+             <asp:RangeValidator 
+                 ID="rngbdt" 
+                 runat="server" 
+                 ControlToValidate="txtbrdt"
+                 Type="Date"
+                 MinimumValue="01/01/2000"
+                 ErrorMessage="Date must be between 01/01/2000 and today" 
+                 Display="Dynamic" 
+                 ForeColor="Red" />
+        </div>
+
+        <div class="form-group">
             <label>Age:</label>
             <asp:TextBox ID="txtAge" runat="server" CssClass="form-control"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvAge" runat="server" ControlToValidate="txtAge"
@@ -59,10 +80,42 @@
         </div>
 
         <div class="form-group">
+            <label>Password :</label>
+            <asp:TextBox ID="txtpass" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:RequiredFieldValidator 
+                ID="rfvpass" 
+                runat="server"
+                ControlToValidate="txtpass"
+                ErrorMessage="Password is required"
+                Display="Dynamic"
+                ForeColor="Red" />
+        </div>
+
+        <div class="form-group">
+            <label>Confirm Password :</label>
+            <asp:TextBox ID="txtcnpass" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:RequiredFieldValidator 
+                ID="rfvcnpass" 
+                runat="server"
+                ControlToValidate="txtcnpass"
+                ErrorMessage="Confirm Password is required"
+                Display="Dynamic"
+                ForeColor="Red" />
+        </div>
+        <asp:CompareValidator 
+            ID="CompareValidator1" 
+            runat="server"
+            ControlToValidate="txtcnpass"
+            ControlToCompare="txtpass"   
+            ErrorMessage="Password is mismatch"
+            Display="Dynamic"
+            ForeColor="Red"/>
+      
+        <div class="form-group">
             <label>Mobile Number:</label>
             <asp:TextBox ID="txtmob" runat="server" CssClass="form-control"></asp:TextBox>
             <asp:RequiredFieldValidator 
-                ID="RequiredFieldValidator1" 
+                ID="rfvmob" 
                 runat="server"
                 ControlToValidate="txtmob"
                 ErrorMessage="Mobile Number is required"
@@ -70,7 +123,7 @@
                 ForeColor="Red" />
 
             <asp:RegularExpressionValidator
-                ID="RegularExpressionValidator1"
+                ID="revmob"
                 runat="server"
                 ControlToValidate="txtmob"
                  ErrorMessage="Enter valid 10-digit phone number"
@@ -86,7 +139,19 @@
                 <asp:RadioButton ID="rbFemale" runat="server" GroupName="Gender" Text="Female" />
                 <asp:RadioButton ID="rdOther" runat="server" GroupName="Gender" Text="Other" />
             </div>
-            
+        </div>
+
+        <div class="form-group">
+            <label class="section-label">Course:</label>
+            <div class="selection-group">
+                <asp:ListBox ID="crslst" runat="server">
+                    <asp:ListItem>BCA</asp:ListItem>
+                    <asp:ListItem>BSC</asp:ListItem>
+                    <asp:ListItem>BA</asp:ListItem>
+                    <asp:ListItem>BCOM</asp:ListItem>
+                    <asp:ListItem>BBA</asp:ListItem>
+                </asp:ListBox>
+            </div>
         </div>
 
         <div class="form-group">
@@ -109,6 +174,7 @@
             <asp:Button ID="btnSubmit" runat="server" Text="Submit Registration" 
                 OnClick="btnSubmit_Click" CausesValidation="true" CssClass="btn-submit" />
             <asp:Label ID="lblnm" runat="server" CssClass="result-message"></asp:Label>
+            <asp:Label ID="lblcrs" runat="server" CssClass="result-message"></asp:Label>
             <asp:Label ID="lblhb" runat="server" CssClass="result-message"></asp:Label>
             <asp:Label ID="lblfile" runat="server" CssClass="result-message"></asp:Label>
         </div>
