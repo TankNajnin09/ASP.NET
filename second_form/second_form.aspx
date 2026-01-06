@@ -7,20 +7,7 @@
     <title>Simple Form</title>
     <link rel="stylesheet" href="style.css">
 
-    <script type="text/javascript">
-        function double_click() {
-            var txt = document.getElementById('<%= txtnm.ClientID %>').value;
-
-            // Convert to Proper Case
-            txt = txt.toLowerCase().replace(/\b\w/g, function (c) {
-                return c.toUpperCase();
-            });
-
-            document.getElementById('<%= lblproper.ClientID %>').innerText ="Proper Text : " + txt;
-
-            return false; // prevent postback
-        }
-    </script>
+    
 </head>
 <body>
     <div class="form-container">
@@ -42,7 +29,25 @@
 
         <asp:Label ID="lbltxt" runat="server"></asp:Label><br /><br />
         <asp:Label ID="lblproper" runat="server"></asp:Label>
+        <asp:Label ID="Label1" runat="server"></asp:Label>
     </form>
   </div>
 </body>
+    <script type="text/javascript">
+        function double_click() {
+         
+            alert();
+            e.preventDefault();
+            var txt = document.getElementById('<%= txtnm.ClientID %>').value;
+
+            // Convert to Proper Case
+            txt = txt.toLowerCase().replace(/\b\w/g, function (c) {
+                return c.toUpperCase();
+            });
+
+            document.getElementById('<%= Label1.ClientID %>').innerText = "Proper Text : " + txt;
+
+            return false; // prevent postback
+        }
+    </script>
 </html>
