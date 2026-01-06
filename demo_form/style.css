@@ -1,0 +1,91 @@
+﻿body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #ebf5fb; /* Lightest blue */
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.registration-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-top: 5px solid #3498db; /* Blue accent */
+}
+
+h2 {
+    color: #2980b9;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Flexbox for the First/Last Name row */
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+    flex: 1; /* Makes items in a row even */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #444;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    box-sizing: border-box; /* Crucial for width alignment */
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #3498db;
+    background-color: #f7fbff;
+}
+
+/* For Checkboxes and Radio Buttons */
+.selection-group {
+    padding: 5px 0;
+}
+
+.selection-group label {
+    display: inline-block;
+    font-weight: normal;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+/* Submit Button styling */
+.btn-submit {
+    width: 100%;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #2980b9;
+}
+
+.result-message {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+    color: #27ae60;
+}
