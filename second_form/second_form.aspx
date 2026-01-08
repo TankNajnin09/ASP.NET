@@ -13,41 +13,34 @@
     <div class="form-container">
     <h2>Contact Us</h2>
     <form id="form1" runat="server">
-        User Name : 
-        <asp:TextBox ID="txtnm" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator 
-            ID="rfvnm" 
-            runat="server" 
-            ControlToValidate="txtnm"
-            ErrorMessage="User name is required"
-            Display="Dynamic"
-            ForeColor="Red"/>
+
+        <asp:Label ID="Label1" runat="server" Text="Enter Text:"></asp:Label><br />
+
+        <asp:TextBox ID="txtInput" runat="server"></asp:TextBox><br /><br />
+
+        <!-- Main Button -->
+        <asp:Button ID="btnShow" runat="server" Text="Click Me"
+            OnClick="btnShow_Click"
+            OnClientClick="return true;"
+            ondblclick="btnDoubleClick(); return false;" />
 
         <br /><br />
-        <asp:Button ID="btnsub" runat="server" Text="Button" OnClick="data_sub" />
-        <br /><br />
 
-        <asp:Label ID="lbltxt" runat="server"></asp:Label><br /><br />
-        <asp:Label ID="lblproper" runat="server"></asp:Label>
-        <asp:Label ID="Label1" runat="server"></asp:Label>
+        <!-- Hidden Button for Double Click Postback -->
+        <asp:Button ID="hiddenBtn" runat="server" OnClick="btnDoubleClick_Server"
+            Style="display:none;" />
+
+        <br />
+
+        <asp:Label ID="lblResult" runat="server" ForeColor="Blue"></asp:Label>
+
     </form>
   </div>
 </body>
     <script type="text/javascript">
-        function double_click() {
-         
-            alert();
-            e.preventDefault();
-            var txt = document.getElementById('<%= txtnm.ClientID %>').value;
-
-            // Convert to Proper Case
-            txt = txt.toLowerCase().replace(/\b\w/g, function (c) {
-                return c.toUpperCase();
-            });
-
-            document.getElementById('<%= Label1.ClientID %>').innerText = "Proper Text : " + txt;
-
-            return false; // prevent postback
+        function btnDoubleClick() {
+            // Call server event using hidden postback
+            document.getElementById('<%= hiddenBtn.ClientID %>').click();
         }
     </script>
 </html>

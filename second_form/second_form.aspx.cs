@@ -4,17 +4,25 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Globalization;
 
 public partial class second_form : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
-        btnsub.Attributes.Add("ondblclick", "return double_click();");
+    }
+    // (1) Single Click
+    protected void btnShow_Click(object sender, EventArgs e)
+    {
+        lblResult.Text = txtInput.Text;
     }
 
-    protected void data_sub(object sender, EventArgs e)
+    // (2) Double Click
+    protected void btnDoubleClick_Server(object sender, EventArgs e)
     {
-        lbltxt.Text = "Normal Text : " + txtnm.Text;
+        TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
+        string properText = textInfo.ToTitleCase(txtInput.Text.ToLower());
+        lblResult.Text = properText;
     }
 }

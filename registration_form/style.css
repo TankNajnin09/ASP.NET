@@ -1,0 +1,85 @@
+﻿ /* Reset & Font */
+        * { box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { margin: 0; min-height: 100vh; background: #f0f4f8; display: flex; justify-content: center; align-items: center; }
+
+        /* Container */
+        .form-card {
+            background: #fff;
+            padding: 40px 35px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 400px;
+            max-width: 95%;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        /* Form Groups */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+            outline: none;
+        }
+
+        .error {
+            color: #e53935;
+            font-size: 13px;
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* Button */
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            border: none;
+            color: #fff;
+            font-weight: 600;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Success Message */
+        #lblMessage {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media(max-width: 450px) {
+            .form-card { padding: 30px 20px; }
+        }

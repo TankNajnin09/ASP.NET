@@ -1,72 +1,98 @@
-﻿/* General body styles */
+﻿/* Page background */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #e0e5ec;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Form container */
+/* Container */
 .form-container {
-  background-color: #fff;
-  padding: 30px 40px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  width: 100%;
-  max-width: 400px;
+    width: 100%;
+    max-width: 380px;
+    padding: 30px;
+    background: #e0e5ec;
+    border-radius: 20px;
+    box-shadow: 
+        9px 9px 16px #b8bec7,
+        -9px -9px 16px #ffffff;
 }
 
-/* Form heading */
+/* Heading */
 .form-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
 }
 
-/* Labels */
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #555;
+/* Label */
+.form-container label {
+    font-size: 14px;
+    color: #555;
+    display: block;
+    margin-bottom: 6px;
 }
 
-/* Inputs and textarea */
-input[type="text"],
-input[type="email"],
-textarea {
-  width: 100%;
-  padding: 10px 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
-  transition: border-color 0.3s;
+/* Input */
+.form-container input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: #e0e5ec;
+    box-shadow: 
+        inset 6px 6px 10px #b8bec7,
+        inset -6px -6px 10px #ffffff;
+    font-size: 14px;
 }
 
-/* Focus effect */
-input:focus,
-textarea:focus {
-  border-color: #4CAF50;
-  outline: none;
+/* Input focus */
+.form-container input[type="text"]:focus {
+    outline: none;
+    box-shadow: 
+        inset 3px 3px 6px #b8bec7,
+        inset -3px -3px 6px #ffffff;
 }
 
 /* Button */
-button {
-  width: 100%;
-  padding: 12px;
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+.form-container input[type="submit"],
+.form-container input[type="button"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 30px;
+    border: none;
+    background: #5c7cfa;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 
+        6px 6px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
 }
 
-button:hover {
-  background-color: #45a049;
+/* Button hover */
+.form-container input[type="submit"]:hover,
+.form-container input[type="button"]:hover {
+    background: #4c6ef5;
+}
+
+/* Button active */
+.form-container input[type="submit"]:active,
+.form-container input[type="button"]:active {
+    box-shadow: 
+        inset 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Result label */
+#lblResult {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 500;
+    color: #2f9e44;
 }
